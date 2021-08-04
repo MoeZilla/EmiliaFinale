@@ -3,8 +3,8 @@ echo "
 *********** STARTING DEPLOY ***********
 
 Suzie v2 -Base Aiogram
-(C) 2020-2021 by @W2HGalaxy-OP
-Support Chat is @SuzieRoBot_support.
+(C) 2020-2021 by IzumiCypherX
+Support Chat is @TeamEmiliaChats.
 
 ***************************************
 "
@@ -30,15 +30,15 @@ ech_final () {
     echo "
     
 =++---------------------------------------------++=
-Suzie. Deployed Successfully
+Emilia. Deployed Successfully
 
  ***************************
  * 🆂 🆄 🅸 🆉 🅴 *
  ******************* v2.0 ** 
 
-Thanks for deploying Suzie
-(C) 2020-2021 by @W2HGalaxy-OP
-Support Chat is @SuzieRoBot_support.
+Thanks for deploying Emilia
+(C) 2020-2021 by IzumiCypherX
+Support Chat is @TeamEmiliaChats.
 =++---------------------------------------------++=
                        Greetings from dev team :)
     "
