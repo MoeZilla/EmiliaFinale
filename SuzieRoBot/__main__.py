@@ -74,24 +74,24 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hellow 🙋‍♀ My name is [Suzie](https://telegra.ph/file/152074fd0e34541dcdc4b.jpg)
+Hellow 🙋‍♀ My name is [Emilia](https://telegra.ph/file/152074fd0e34541dcdc4b.jpg)
 I'm here to help you manage your groups! Hit` *📚Commands* `button below to find out more about how to use me to my full potential.
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD Suzie TO YOUR GROUP ➕️", url="t.me/SuzieRoBot?startgroup=true"),
+            text="➕️ 𝑨𝒅𝒅 𝑬𝒎𝒊𝒍𝒊𝒂 𝑻𝒐 𝒀𝒐𝒖𝒓 𝑮𝒓𝒐𝒖𝒑 ➕️", url="t.me/SuzieRoBot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="ℹ️ ABOUT", callback_data="Suzie_"),
-        InlineKeyboardButton(text="📚 COMMANDS", callback_data="help_back"),
+        InlineKeyboardButton(text="ℹ️ 𝑨𝒃𝒐𝒖𝒕", callback_data="Suzie_"),
+        InlineKeyboardButton(text="📚 𝑪𝒐𝒎𝒎𝒂𝒏𝒅𝒔", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(
             text="💾 SOURCE", callback_data="source_"),
         InlineKeyboardButton(
-            text="👥 SUPPORT", url="https://t.me/SuzieRoBot_Support"
+            text="👥 SUPPORT", url="https://t.me/{SUPPORT_CHAT}"
         ),
     ],
 ]
@@ -381,7 +381,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Suzie*
+            text=""" Hᴇʟʟᴏ Tʜᴇʀᴇ! I ᴀᴍ Eᴍɪʟɪᴀ
                  \nHere is the [Source Code](https://github.com/W2HGalaxy-OP/SuzieRoBot) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=False,
