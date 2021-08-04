@@ -1,6 +1,6 @@
 import threading
 from sqlalchemy import Column, String
-from AsunaRobot.modules.sql import BASE, SESSION
+from SuzieRobot.modules.sql import BASE, SESSION
 class KukiChats(BASE):
     __tablename__ = "kuki_chats"
     chat_id = Column(String(14), primary_key=True)
