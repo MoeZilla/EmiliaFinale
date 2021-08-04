@@ -74,8 +74,12 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hellow 🙋‍♀ My name is [Emilia](https://telegra.ph/file/152074fd0e34541dcdc4b.jpg)
-I'm here to help you manage your groups! Hit` *📚Commands* `button below to find out more about how to use me to my full potential.
+ ────「 [𝐄𝐦𝐢𝐥𝐢𝐚](https://telegra.ph/file/d0f9dd77d54d09e8e6937.jpg) 」────
+Hᴇʟʟᴏ Tʜᴇʀᴇ Aᴅᴠᴇɴᴛᴜʀᴇʀ,
+I, Eᴍɪʟɪᴀ ɪs ᴀ Mᴏᴅᴜʟᴀʀ Aɴɪᴍᴇ Tʜᴇᴍᴇᴅ Bᴏᴛ Wɪᴛʜ Lᴏᴛ ᴏғ Cᴏᴏʟ Fᴇᴀᴛᴜʀᴇs.
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+𝐹𝑜𝑙𝑙𝑜𝑤 𝑇ℎ𝑒 𝐵𝑢𝑡𝑡𝑜𝑛𝑠 𝐵𝑒𝑙𝑜𝑤 𝑓𝑜𝑟 𝐾𝑛𝑜𝑤𝑖𝑛𝑔 𝐴𝑏𝑜𝑢𝑡 𝑀𝑦 𝐹𝑒𝑎𝑡𝑢𝑟𝑒𝑠.
+➖➖➖➖➖➖➖➖➖➖➖➖➖
 """
 
 buttons = [
@@ -89,8 +93,6 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="💾 SOURCE", callback_data="source_"),
-        InlineKeyboardButton(
             text="👥 SUPPORT", url="https://t.me/{SUPPORT_CHAT}"
         ),
     ],
@@ -98,10 +100,12 @@ buttons = [
 
 
 HELP_STRINGS = """
-*『HELP BUTTONS HERE』*"""
+𝐸𝑚𝑖𝑙𝑖𝑎'𝑠 𝐻𝑒𝑙𝑝 𝑀𝑒𝑛𝑢 ℎ𝑎𝑠 𝐵𝑒𝑒𝑛 𝐿𝑖𝑠𝑡𝑒𝑑 𝐵𝑒𝑙𝑜𝑤.
+𝐸𝑥𝑝𝑙𝑜𝑟𝑒 𝑌𝑜𝑢𝑟𝑠𝑒𝑙𝑓✨
+"""
 
 
-DONATE_STRING = """No need.. I'm rich"""
+DONATE_STRING = """DONATE THAT TO SOME CHARITY"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -346,16 +350,14 @@ def Suzie_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Suzie_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Suzie*, a powerful group management bot built to help you manage your group easily.
-                 ❍ I can restrict users.
-                 ❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 ❍ I have an advanced anti-flood system.
-                 ❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 ❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 ❍ I check for admins' permissions before executing any command and more stuffs
-                 \n_Suzie's licensed under the GNU General Public License v3.0_
-                 Here is the [💾Repository](https://github.com/W2HGalaxy-OP/SuzieRoBot).
-                 If you have any question about Suzie, let us know at @SuzieRoBot_Support.""",
+            text="""👩‍🦰 I'm *Emilia*, a powerful group management bot built to help you manage your group easily.
+                 🔸 I can restrict users.
+                 🔸 I can greet users with customizable welcome messages and even set a group's rules.
+                 🔸 I have an advanced anti-flood system.
+                 🔸 I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
+                 🔸 I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
+                 🔸 I check for admins' permissions before executing any command and more stuffs
+                 If you have any question about Emilia, let us know at @TeamEmiliaChats.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -375,32 +377,6 @@ def Suzie_about_callback(update: Update, context: CallbackContext):
                 disable_web_page_preview=False,
         )
 
-
-@run_async
-def Source_about_callback(update: Update, context: CallbackContext):
-    query = update.callback_query
-    if query.data == "source_":
-        query.message.edit_text(
-            text=""" Hᴇʟʟᴏ Tʜᴇʀᴇ! I ᴀᴍ Eᴍɪʟɪᴀ
-                 \nHere is the [Source Code](https://github.com/W2HGalaxy-OP/SuzieRoBot) .""",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=False,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="source_back")
-                 ]
-                ]
-            ),
-        )
-    elif query.data == "source_back":
-        query.message.edit_text(
-                PM_START_TEXT,
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=False,
-        )
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
@@ -677,7 +653,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yes I'm alive ❤😍")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "EmiliaAnimeBot is Up Again")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
