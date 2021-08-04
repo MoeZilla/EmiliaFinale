@@ -85,42 +85,42 @@ def gban(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "Emilia's Database Returns an Error[Wrong ID or USERNAME]"
         )
         return
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "That user is part of the Association\nI can't act against our own."
+            "The User You're Trying to Gban is a Grandmaster.\nI can't act against someone with that level of Magic Spell"
         )
         return
 
     if int(user_id) in DRAGONS:
         message.reply_text(
-            "I spy, with my little eye... a disaster! Why are you guys turning on each other?"
+            "The User You're Trying to Gban is a Master Spellshaper. SHEESH!"
         )
         return
 
     if int(user_id) in DEMONS:
         message.reply_text(
-            "OOOH someone's trying to gban a Demon Disaster! *grabs popcorn*"
+            "He's a Senior SpellShaper, I can't Gban Them."
         )
         return
 
     if int(user_id) in TIGERS:
-        message.reply_text("That's a Tiger! They cannot be banned!")
+        message.reply_text("This User is A Part of Associative SpellShapers. Can't Ban Them.")
         return
 
     if int(user_id) in WOLVES:
-        message.reply_text("That's a Wolf! They cannot be banned!")
+        message.reply_text("They're one of the Aspiring SpellShapers. /nThough Apprentice, but can't be banned")
         return
 
     if user_id == bot.id:
-        message.reply_text("You uhh...want me to punch myself?")
+        message.reply_text("Come on! That's me Myself. /nTake a Break")
         return
 
     if user_id in [777000, 1087968824]:
-        message.reply_text("Fool! You can't attack Telegram's native tech!")
+        message.reply_text("You Really Think You Can Ban Telegram's Services? 😶")
         return
 
     try:
@@ -164,7 +164,7 @@ def gban(update: Update, context: CallbackContext):
 
         return
 
-    message.reply_text("On it!")
+    message.reply_text("Running Systematic Gban Scan On {mention_html(user_chat.id, user_chat.first_name)}")
 
     start_time = time.time()
     datetime_fmt = "%Y-%m-%dT%H:%M"
@@ -175,14 +175,12 @@ def gban(update: Update, context: CallbackContext):
     else:
         chat_origin = "<b>{}</b>\n".format(chat.id)
 
-    log_message = (
-        f"#GBANNED\n"
-        f"<b>Originated from:</b> <code>{chat_origin}</code>\n"
-        f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-        f"<b>Banned User:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
-        f"<b>Banned User ID:</b> <code>{user_chat.id}</code>\n"
-        f"<b>Event Stamp:</b> <code>{current_time}</code>"
-    )
+    log_message = """
+        <b>🚨EMILIA'S #GBAN NOTIFICATION🚨</b>
+        <b>APPROVED BY: {mention_html(user.id, user.first_name)}</b>
+        <b>GBANNED CULPRIT: {mention_html(user_chat.id, user_chat.first_name)}</b>
+        <b>POINT OF ORIGIN: {user_chat.id}</b>
+    """
 
     if reason:
         if chat.type == chat.SUPERGROUP and chat.username:
@@ -241,7 +239,7 @@ def gban(update: Update, context: CallbackContext):
 
     if EVENT_LOGS:
         log.edit_text(
-            log_message + f"\n<b>Chats affected:</b> <code>{gbanned_chats}</code>",
+            log_message + f"\n<b>GBAN ACCOMPLISHED IN:</b> <code>{gbanned_chats} Chats</code>",
             parse_mode=ParseMode.HTML,
         )
     else:
@@ -257,9 +255,9 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
+        message.reply_text("Systematic Gban Accomplished.", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
+        message.reply_text("Systematic Gban Accomplished.", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
